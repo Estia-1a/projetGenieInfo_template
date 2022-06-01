@@ -1,24 +1,33 @@
 # Project Genie Info
 
-## Prerequisites
+  1. [Prerequisites](#1-prerequisites)
+  2. [Clone project](#2-clone-project)
+  3. [Install](#3-install)
+  4. [Let's start working](#4-lets-start-working)
 
-### Install required extensions
+## 1 Prerequisites
+
+### 1-1 Install required extensions
 - Go to "Extensions" view (CTRL + Shift + X)
 - Use search bar to find and install GitHub Pull Requests and Issues
-![github_pull_install](https://user-images.githubusercontent.com/16139930/168248657-8267ab92-1e1e-4642-9406-2f02fcc6a6ec.PNG)
+ <img src="https://user-images.githubusercontent.com/16139930/168248657-8267ab92-1e1e-4642-9406-2f02fcc6a6ec.PNG" width="500px"/>
 - Use search bar to find and install CMake and CMake tool support for VS Code
-![cmake_install](https://user-images.githubusercontent.com/16139930/168254129-b86fe4e7-2c5f-4700-a503-41de653d0199.PNG)
-![cmake_tool_install](https://user-images.githubusercontent.com/16139930/168254203-dff13fb0-8b27-45ba-889c-482826f0ae47.PNG)
 
-### Connect your GitHub Account
+<img src="https://user-images.githubusercontent.com/16139930/168254129-b86fe4e7-2c5f-4700-a503-41de653d0199.PNG" width="400px" />  <img src="https://user-images.githubusercontent.com/16139930/168254203-dff13fb0-8b27-45ba-889c-482826f0ae47.PNG" width="400px" />
+
+
+
+
+
+### 1-2 Connect your GitHub Account
 - Go to "GitHub" view
 - Click on "Sign in"
 
-![github_signin](https://user-images.githubusercontent.com/16139930/168287171-6991bcf8-392f-46ee-8f3a-4c9b7c6cf46c.png)
+ <img src="https://user-images.githubusercontent.com/16139930/168287171-6991bcf8-392f-46ee-8f3a-4c9b7c6cf46c.png" width="150" />
 
 - Allow GitHub Pull Requests and Issues extension
 
-![github_signin-2](https://user-images.githubusercontent.com/16139930/168287186-2d974838-f3ee-4db8-a9cb-ffdfec8841a0.png)
+<img src="https://user-images.githubusercontent.com/16139930/168287186-2d974838-f3ee-4db8-a9cb-ffdfec8841a0.png" width="500px" />
 
 - In browser, click on "choisir une application", then "ouvrir le lien"
 
@@ -35,7 +44,7 @@
 
 - If you see "You are signed in now and can close this page." in your browser, you have successfully connected your GitHub account to VS Code.
 
-## Clone project 
+## 2 Clone project
 - Open command palette (CTRL + SHIFT + P)
 - Type "clone" and select "GIT: clone"
 - Select "Clone from Github"
@@ -45,28 +54,36 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 - Select "open" to: Would you like to open the cloned repository?
 - Select "yes" to: Do you trust the authors?
 
-## Install
+## 3 Install
 To install project you can either:
-- use VS Code terminal and follow "Install in VS Code command line", or
-- use VS Code CMAKE extension interface and follow "Install with VS Code CMAKE extension interface"
+- use VS Code terminal and follow [Install in VS Code command line](#3-1-install-in-vs-code-command-line), or
+- use VS Code CMAKE extension interface and follow [Install with VS Code CMAKE extension interface](#3-2-install-with-vs-code-cmake-extension-interface)
 
-## Install in VS Code command line
+## 3-1 Install in VS Code command line
 - cmake -B build
 - cmake --build build
 - cmake --install build
 - freud.exe -f images/input/image.jpeg -c helloworld
 
-## Install with VS Code CMAKE extension interface
+## 3-2 Install with VS Code CMAKE extension interface
 - If it doesn't start automatically: Open command palette (CTRL + SHIFT + P) and type CMake and choose : "CMake: Configure"
 - Choose : GCC 11.2.0 [...]
-- Build your project: click on "build" button of the bottom blue bar (see bellow)
+- Build your project: click on "Build" button of the bottom blue bar (see bellow)
 
-![build_project](https://user-images.githubusercontent.com/16139930/168253599-978e64ab-c826-49ef-90e4-14e35b41fbbb.png)
+<img src="https://user-images.githubusercontent.com/16139930/171380204-6b37b499-0878-4a2d-ac0e-2b320faeed09.PNG" width="500px" />
 
-- You now have a build folder with a MakeFile:
-
-![project_arbo_wbuild](https://user-images.githubusercontent.com/16139930/168253746-613df728-840f-4d2d-b49f-b675e5d523b1.PNG)
+- You must have a build folder now
+- Install your project: 
+  * Click on [all]
+  * <img src="https://user-images.githubusercontent.com/16139930/171380432-96d768fe-ca9f-4c99-bac1-3811f3caacfe.PNG" width="500px" />
+  * Choose install
+  * Click on "Build" button of the bottom blue bar
 
 - Run your code:
 
-![run_code](https://user-images.githubusercontent.com/16139930/168266156-eaed4cd2-0fe7-4bed-81d6-afd3b7485dee.png)
+<img src="https://user-images.githubusercontent.com/16139930/168266156-eaed4cd2-0fe7-4bed-81d6-afd3b7485dee.png" width="500px" />
+
+---
+
+## 4 Let's start working
+
