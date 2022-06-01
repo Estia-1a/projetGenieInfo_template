@@ -1,0 +1,16 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.debugConfig": {
+        "args": [
+            "--debug",
+            "-f",
+            "images/input/image.jpeg",
+            "-c",
+            "helloworld"
+        ],
+        "cwd": "${workspaceFolder}"
+    },
+    "files.associations": {
+        "unistd.h": "c"
+    },
+}

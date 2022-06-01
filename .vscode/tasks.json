@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Custom build",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"-g",
+				"${fileDirname}\\**.c",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-I${workspaceFolder}/estia-image/include/",
+				"-L${workspaceFolder}/estia-image/lib/",
+				"-lestia-image",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe"
+		}
+	]
+}
