@@ -1,0 +1,6 @@
+{
+    "name": "(gdb) Launch",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "../freud.exe",
+}
