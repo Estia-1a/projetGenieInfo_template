@@ -1,36 +1,8 @@
 # Project Genie Info
 
-Simple project that
-- [x] open an image
-- [x] compute its size
-- [ ] Compute the average red components
-- [x] Save a image
+## Prerequisites
 
-## Install (without VS Code)
-
-### With CMAKE
-- You need cmake 3.20 a least
-#### Make the estia-image lib if you dont have it
-- cmake -S estia-image -B estia-image/build
-- cmake --build estia-image/build
-- cmake --install estia-image/build
-#### Make Freud
-- cmake -B build
-- cmake --build build
-- cmake --install build
-
-### Without CMake
-
-- Get the libestia-image.a (or .lib) and estia-image.h
-- Put them in a folder estia-image/lib and estia-image/include at the root of the project (same level as your src directory)
-
-gcc -c src/main.c -I estia-image/include -o main.o
-gcc main.o -Lestia-image/lib -lestia-image -o freud
-
-## Install (with VS Code)
-
-### With CMAKE and VS Code
-#### Install required extensions
+### Install required extensions
 - Go to "Extensions" view (CTRL + Shift + X)
 - Use search bar to find and install GitHub Pull Requests and Issues
 ![github_pull_install](https://user-images.githubusercontent.com/16139930/168248657-8267ab92-1e1e-4642-9406-2f02fcc6a6ec.PNG)
@@ -38,7 +10,7 @@ gcc main.o -Lestia-image/lib -lestia-image -o freud
 ![cmake_install](https://user-images.githubusercontent.com/16139930/168254129-b86fe4e7-2c5f-4700-a503-41de653d0199.PNG)
 ![cmake_tool_install](https://user-images.githubusercontent.com/16139930/168254203-dff13fb0-8b27-45ba-889c-482826f0ae47.PNG)
 
-#### Connect your GitHub Account
+### Connect your GitHub Account
 - Go to "GitHub" view
 - Click on "Sign in"
 
@@ -63,7 +35,7 @@ gcc main.o -Lestia-image/lib -lestia-image -o freud
 
 - If you see "You are signed in now and can close this page." in your browser, you have successfully connected your GitHub account to VS Code.
 
-#### Clone project with VS Code
+## Clone project 
 - Open command palette (CTRL + SHIFT + P)
 - Type "clone" and select "GIT: clone"
 - Select "Clone from Github"
@@ -73,19 +45,15 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 - Select "open" to: Would you like to open the cloned repository?
 - Select "yes" to: Do you trust the authors?
 
-#### Install with CMake and VS Code
 
-- Open command palette (CTRL + SHIFT + P)
-- Type CMake and choose : "CMake: Configure"
+## Install in VS Code command line
+- cmake -B build
+- cmake --build build
+- cmake --install build
+
+## Install with VS Code CMAKE extension interface
+- If it doesn't start automatically: Open command palette (CTRL + SHIFT + P) and type CMake and choose : "CMake: Configure"
 - Choose : GCC 11.2.0 [...]
-- See bottom right pop-up messages
-- A pop-up indicates that CMakeLists.txt was not found. Select "Locate"
-
-![cmake_list_locate](https://user-images.githubusercontent.com/16139930/168253466-41e99ef3-b403-4082-bb28-c2b63fef4ebc.PNG)
-
-- Select "Browse for CMakeLists.txt"
-- Open "src" and select "CMakeLists.txt"
-- Click on "Load"
 - Build your project: click on "build" button of the bottom blue bar (see bellow)
 
 ![build_project](https://user-images.githubusercontent.com/16139930/168253599-978e64ab-c826-49ef-90e4-14e35b41fbbb.png)
