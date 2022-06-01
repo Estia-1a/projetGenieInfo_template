@@ -45,11 +45,16 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 - Select "open" to: Would you like to open the cloned repository?
 - Select "yes" to: Do you trust the authors?
 
+## Install
+To install project you can either:
+- use VS Code terminal and follow "Install in VS Code command line", or
+- use VS Code CMAKE extension interface and follow "Install with VS Code CMAKE extension interface"
 
 ## Install in VS Code command line
 - cmake -B build
 - cmake --build build
 - cmake --install build
+- freud.exe -f images/input/image.jpeg -c helloworld
 
 ## Install with VS Code CMAKE extension interface
 - If it doesn't start automatically: Open command palette (CTRL + SHIFT + P) and type CMake and choose : "CMake: Configure"
