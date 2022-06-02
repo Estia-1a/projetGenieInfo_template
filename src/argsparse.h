@@ -4,12 +4,10 @@
 #ifndef ARGSPARSE_H
 #define ARGSPARSE_H
 
-#define MAX_FILE_COUNT 10
-#define MAX_LENGTH_COMMAND 25
-#define MAX_ARGUMENT_COUNT 5
+#include "configp.h"
 
-int parse_arguments( int argc, char **argv, char acommand[MAX_LENGTH_COMMAND] );
+int parse_arguments( int argc, char **argv, Config * conf);
 void check_file();
-void check_debug_mode();
+void check_debug_mode(Config conf);
 
 #endif

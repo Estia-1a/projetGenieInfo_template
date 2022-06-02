@@ -17,9 +17,9 @@ int main(int argc, char **argv) {
    */
 
   /*DO NOT EDIT THIS PART*/
-  static char command[MAX_LENGTH_COMMAND] ;
-  parse_arguments( argc, argv, command ) ;
-  check_debug_mode();
+  Config configuration ;
+  parse_arguments( argc, argv, &configuration ) ;
+  check_debug_mode(configuration);
   check_file();
   /* END */
 
@@ -27,9 +27,13 @@ int main(int argc, char **argv) {
   /* Example with helloworld command
    * If helloworld is a called command: freud.exe -f images/input/image.jpeg -c helloworld 
    */
-  if ( strncmp( command, "helloworld", 10 ) == 0 ) {
+  if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
     /* helloworld() function is defined in feature.h and implemented in feature.c */
     helloWorld();
+  }
+  if ( strncmp( configuration.command, "coucou", 6 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    printf("\ncoucou");
   }
   /*
    * TO COMPLETE
