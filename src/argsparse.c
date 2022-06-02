@@ -33,7 +33,7 @@ int parse_arguments( int argc, char **argv, char acommand[MAX_LENGTH_COMMAND] ) 
 
   while (1) {
       int option_index = 0;
-      c = getopt_long (argc, argv, "f:c:", long_options, &option_index);
+      c = getopt_long (argc, argv, "f:c:v:", long_options, &option_index);
       /* Detect the end of the options. */
       if (c == -1) {
         break;
