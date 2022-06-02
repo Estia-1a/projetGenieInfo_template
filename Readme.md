@@ -95,3 +95,11 @@ To install project you can either:
 
 ## 5 Let's start working
 
+When you finish the implementation of a feature, skip a line and add the name of the relative function in `freud.manifest`.
+
+### Tutorial
+- [ ] Dimension https://github.com/Estia-1a/projetGenieInfo_template/issues/3
+- [ ] Color of the first pixel https://github.com/Estia-1a/projetGenieInfo_template/issues/4
+- [ ] Color of the 10th pixel https://github.com/Estia-1a/projetGenieInfo_template/issues/5
+- [ ] Color of the first pixel on the second line https://github.com/Estia-1a/projetGenieInfo_template/issues/6
+- [ ] RGB pixel, get and print functions https://github.com/Estia-1a/projetGenieInfo_template/issues/7
