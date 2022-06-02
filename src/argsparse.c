@@ -24,7 +24,7 @@ int parse_arguments( int argc, char **argv, char acommand[MAX_LENGTH_COMMAND] ) 
     {
       {"debug", no_argument,     &debug_mode, 1},
       {"brief", no_argument,     &debug_mode, 0},
-      {"version",  required_argument, 0, 'v'},
+      {"version",  no_argument, 0, 'v'},
       {"file",  required_argument, 0, 'f'},
       {"command",required_argument, 0, 'c'},
       {"type",  required_argument, 0, 't'},
@@ -56,7 +56,8 @@ int parse_arguments( int argc, char **argv, char acommand[MAX_LENGTH_COMMAND] ) 
           /* getopt_long already printed an error message. */
           break;
         case 'v':
-          /*  */
+          puts("Version 1.0.0");
+          exit(0);
           break;
         default:
           printf ("option %s unhandled", long_options[option_index].name);
