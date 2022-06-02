@@ -5,7 +5,7 @@
 #include <estia-image.h>
 #include <getopt.h>
 
-#include "feature.h"
+#include "features.h"
 #include "utils.h"
 #include "argsparse.h"
 

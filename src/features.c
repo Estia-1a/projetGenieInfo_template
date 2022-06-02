@@ -1,7 +1,7 @@
 #include <estia-image.h>
 #include <stdio.h>
 
-#include "feature.h"
+#include "features.h"
 #include "utils.h"
 
 /**
