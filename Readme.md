@@ -2,8 +2,9 @@
 
   1. [Prerequisites](#1-prerequisites)
   2. [Clone project](#2-clone-project)
-  3. [Install](#3-install)
-  4. [Let's start working](#4-lets-start-working)
+  3. [Install librairies](#3-install-librairies)
+  4. [Install](#4-install)
+  5. [Let's start working](#5-lets-start-working)
 
 ## 1 Prerequisites
 
@@ -54,18 +55,25 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 - Select "open" to: Would you like to open the cloned repository?
 - Select "yes" to: Do you trust the authors?
 
-## 3 Install
+## 3 Install librairies
+TO DO
+- Download https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/estia-image-v2.0.1-win10-mingw64.zip TO CHANGE V3
+- Put the content in estia-image/
+- Download https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/getopt-v2.0.1-win10-mingw64.zip TO CHANGE V3
+- Put the content in get-opt/
+
+## 4 Install
 To install project you can either:
 - use VS Code terminal and follow [Install in VS Code command line](#3-1-install-in-vs-code-command-line), or
 - use VS Code CMAKE extension interface and follow [Install with VS Code CMAKE extension interface](#3-2-install-with-vs-code-cmake-extension-interface)
 
-## 3-1 Install in VS Code command line
+## 4-1 Install in VS Code command line
 - cmake -B build
 - cmake --build build
 - cmake --install build
 - freud.exe -f images/input/image.jpeg -c helloworld
 
-## 3-2 Install with VS Code CMAKE extension interface
+## 4-2 Install with VS Code CMAKE extension interface
 - If it doesn't start automatically: Open command palette (CTRL + SHIFT + P) and type CMake and choose : "CMake: Configure"
 - Choose : GCC 11.2.0 [...]
 - Build your project: click on "Build" button of the bottom blue bar (see bellow)
@@ -85,5 +93,5 @@ To install project you can either:
 
 ---
 
-## 4 Let's start working
+## 5 Let's start working
 
