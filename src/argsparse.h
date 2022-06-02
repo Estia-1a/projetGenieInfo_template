@@ -4,10 +4,6 @@
 #ifndef ARGSPARSE_H
 #define ARGSPARSE_H
 
-#define MODE_BMP 0
-#define MODE_JPG 1
-#define MODE_PNG 2
-
 #define MAX_FILE_COUNT 10
 #define MAX_LENGTH_COMMAND 25
 #define MAX_ARGUMENT_COUNT 5

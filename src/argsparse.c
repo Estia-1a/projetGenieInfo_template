@@ -11,7 +11,6 @@
 /* Flag set by ‘--debug. */
 static int debug_mode;
 
-static int output_format;
 static char command[MAX_LENGTH_COMMAND] ;
 static char* filenames[MAX_FILE_COUNT] ;
 static char* arguments[MAX_ARGUMENT_COUNT] ;
@@ -25,9 +24,6 @@ int parse_arguments( int argc, char **argv, char acommand[MAX_LENGTH_COMMAND] ) 
     {
       {"debug", no_argument,     &debug_mode, 1},
       {"brief", no_argument,     &debug_mode, 0},
-      {"bmp", no_argument,     &output_format, MODE_BMP},
-      {"jpg", no_argument,     &output_format, MODE_JPG},
-      {"png", no_argument,     &output_format, MODE_PNG},
       {"file",  required_argument, 0, 'f'},
       {"command",required_argument, 0, 'c'},
       {"type",  required_argument, 0, 't'},
