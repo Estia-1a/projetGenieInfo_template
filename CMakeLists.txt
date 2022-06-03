@@ -13,6 +13,8 @@ include_directories( ${GETOPT_PATH}/include )
 AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/ SOURCE_FILES)
 add_executable( freud ${SOURCE_FILES})
 
+target_compile_options(freud PRIVATE -Wall -Wextra -Wpedantic)
+#target_compile_options(freud PRIVATE -Wall -Wextra -Wpedantic -Werror)
 # Find the Library
 find_library(ESTIA_IMAGE_LIB
     NAMES estia-image

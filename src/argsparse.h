@@ -6,7 +6,7 @@
 
 #include "configp.h"
 
-int parse_arguments( int argc, char **argv, Config * conf);
+void parse_arguments( int argc, char **argv, Config * conf);
 void check_file();
 void check_debug_mode(Config conf);
 
