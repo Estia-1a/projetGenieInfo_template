@@ -95,9 +95,64 @@ To install project you can either:
 
 ## 5 Let's start working
 
-When you finish the implementation of a feature, skip a line and add the name of the relative function in `freud.manifest`.
+### Helloworld example
 
-### Tutorial
+The following example is given in `main.c`. 
+```c
+if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    helloWorld();
+}
+```
+This condition is verified when "helloworld" is placed after "-c" when `freud.exe` is launched. Please note that you always have to specify path of an input image after "-f".
+```bash
+./freud.exe --debug -f images/input/image.jpeg -c helloworld
+```
+The following structure is used to store the different arguments of command launch.
+```c
+#define MAX_FILE_COUNT 10 /* Maximum number of files */
+#define MAX_LENGTH_COMMAND 25 /* Maximum length of a command */
+#define MAX_ARGUMENT_COUNT 5 /* Maximum number of arguments */
+
+typedef struct _config {
+    int debug_mode ; /* Debug mode flag --debug */
+    char command[MAX_LENGTH_COMMAND] ; /* Command called. Example: helloworld */
+    char* filenames[MAX_FILE_COUNT] ; /* Images path. Example: ./images/input/image.jpeg */
+    char* arguments[MAX_ARGUMENT_COUNT] ; /* Other arguments. */
+} Config ;
+```
+In `main.c`, to access the specified command you must use `Config` struct like this: `configuration.command`.
+In `main.c`, to access the path of input file you must use `Config` struct like this: `configuration.filenames`.
+
+Definition of helloworld() function can be found in `src/features.h`. You have to define prototypes of the other features here.
+```c
+#ifndef FEATURES_H
+#define FEATURES_H
+
+
+void helloWorld();
+
+#endif
+```
+Implementation of helloworld() function can be found in `src/features.c`. You have to implement the other features here.
+```c
+void helloWorld() {
+    printf("Hello World !");
+}
+```
+When you finished the implementation of a feature, skip a line and add the name of the relative function in `freud.manifest`. For example, when dimension() is defined and implemented, you must add dimension in the next line in `freud.manifest` like this:
+```
+helloworld
+dimension
+```
+
+### Features
+
+You have to begin with Tutorial issues (see [tutorial issues](https://github.com/Estia-1a/projetGenieInfo_template/issues?q=is%3Aissue+is%3Aopen+label%3Atutorial)), then Statistics issues (see [statistics issues](https://github.com/Estia-1a/projetGenieInfo_template/issues?q=is%3Aissue+is%3Aopen+label%3Astatistics)). 
+Implementing these issues is the minimum work to get the minimum grade. <br>
+Please refer to the [wiki](https://github.com/Estia-1a/projetGenieInfo_public/wiki/Image) for writing/reading images relative question.
+
+#### Tutorial
 - [ ] Dimension https://github.com/Estia-1a/projetGenieInfo_template/issues/3
 - [ ] Color of the first pixel https://github.com/Estia-1a/projetGenieInfo_template/issues/4
 - [ ] Color of the 10th pixel https://github.com/Estia-1a/projetGenieInfo_template/issues/5
