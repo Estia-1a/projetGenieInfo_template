@@ -35,7 +35,7 @@ jobs:
         run: |
           wget $PUBLIC_URL -O public.zip
           unzip public.zip
-          mv projetGenieInfo_public-evaluator ${{ runner.workspace }}/public
+          mv projetGenieInfo_public-release-evaluator ${{ runner.workspace }}/public
       - name: Cache Libraries
         id: cache-libraries
         uses: actions/cache@v3
