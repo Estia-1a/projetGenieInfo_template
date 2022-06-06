@@ -102,7 +102,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
            add-paths: result
-           commit-message: Automatic Evaluation from ${{steps.runTests.outputs.date}}
+           commit-message: Automatic Evaluation ${{steps.runTests.outputs.grade}} on ${{steps.runTests.outputs.date}}
            branch: Evaluation/Daily
            branch-suffix: timestamp
            delete-branch: true
