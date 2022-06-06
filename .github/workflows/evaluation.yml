@@ -106,7 +106,7 @@ jobs:
            branch: Evaluation/Daily
            branch-suffix: timestamp
            delete-branch: true
-           title: Daily Evaluation ${{steps.runTests.outputs.date}}
+           title: Daily Evaluation ${{steps.runTests.outputs.grade}} on ${{steps.runTests.outputs.date}}
            body: ${{steps.runTests.outputs.markdown}}
       - name: Get error message 
         id: errorMessage 
