@@ -49,7 +49,7 @@
 - Open command palette (CTRL + SHIFT + P)
 - Type "clone" and select "GIT: clone"
 - Select "Clone from Github"
-- Select "Estia-1a/projetGenieInfo_public" project
+- Select "Estia-1a/pgi-2022-TeamName" project
 - Select a location for the project
 WARNING: No accents in your folder names! Otherwise, your project will not compile.
 - Select "open" to: Would you like to open the cloned repository?
