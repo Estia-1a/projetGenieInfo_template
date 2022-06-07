@@ -113,8 +113,10 @@ jobs:
         if: ${{ failure() && steps.buildFreud.conclusion == 'failure' }}
         run : |
           echo "# Compilation Failed"> $GITHUB_STEP_SUMMARY
-          echo "## Error output"          >> $GITHUB_STEP_SUMMARY
+          echo "## make output"          >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`"  >> $GITHUB_STEP_SUMMARY
           cat ${{ github.workspace }}/result/${{env.RELEASE_DATE}}/stderr.log  >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`"  >> $GITHUB_STEP_SUMMARY
           MESSAGE=$(cat $GITHUB_STEP_SUMMARY) 
           MESSAGE="${MESSAGE//'%'/'%25'}"
           MESSAGE="${MESSAGE//$'\n'/'%0A'}"
