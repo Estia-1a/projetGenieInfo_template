@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.12)
 project(freud VERSION 1.0.1 DESCRIPTION "freud is an image analyst")
 
 # Set everything to use our image library
