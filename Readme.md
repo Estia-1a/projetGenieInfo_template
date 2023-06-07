@@ -82,7 +82,7 @@ To install project you can either:
 
 ## 4-2 Install with VS Code CMAKE extension interface
 - If it doesn't start automatically: Open command palette (CTRL + SHIFT + P) and type CMake and choose : "CMake: Configure"
-- Choose : GCC 11.2.0 [...]
+- Choose : GCC 4.6.0 [...]
 - Build your project: click on "Build" button of the bottom blue bar (see bellow)
 
 <img src="https://user-images.githubusercontent.com/16139930/171380204-6b37b499-0878-4a2d-ac0e-2b320faeed09.PNG" width="500px" />
