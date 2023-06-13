@@ -59,12 +59,13 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 - Go see the latest release https://github.com/Estia-1a/projetGenieInfo_public/releases (latest = v2.0.1 in June 2022), then:
 
 **estia-image**
-- Download the `estia-image` zip file correponding to your setup (e.g., VS Code, Windows 10, with mingw 64 bits: [estia-image-v2.0.1-win10-mingw64.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/estia-image-v2.0.1-win10-mingw64.zip))
+- Download the `estia-image` zip file correponding to your setup 
+- (e.g., VS Code, Windows 10, with mingw 32 bits: [estia-image-v2.0.1-win10-mingw32.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/estia-image-v2.0.1-win10-ming32.zip))
 - Unzip the file
 - Move the `estia-image/` folder in your project (near `src/`)
 
 **getopt**
-- Download the `getopt` zip file correponding to your setup (e.g., VS Code, Windows 10, with mingw 64 bits: [getopt-v2.0.1-win10-mingw64.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/getopt-v2.0.1-win10-mingw64.zip))
+- Download the `getopt` zip file correponding to your setup (e.g., VS Code, Windows 10, with mingw 32 bits: [getopt-v2.0.1-win10-mingw32.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/getopt-v2.0.1-win10-ming32.zip))
 - Unzip the file
 - Move the `getopt/` folder in your project (near `src/` and `estia-image/`)
 
