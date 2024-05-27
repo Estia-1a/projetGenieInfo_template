@@ -4,7 +4,8 @@ on:
 permissions:
   checks: write
   actions: read
-  contents: read
+  contents: write
+  pull-requests: write
 env:
   PUBLIC_URL: https://github.com/Estia-1a/projetGenieInfo_public/archive/refs/heads/release/evaluator.zip
 jobs:
