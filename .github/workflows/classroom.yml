@@ -1,8 +1,5 @@
 name: Autograding Tests
 on:
-  schedule:
-    - cron: "0 2 * 6 *"
-  workflow_dispatch:
   repository_dispatch:
 permissions:
   checks: write
@@ -23,7 +20,7 @@ jobs:
           echo ${{ github.sha }} > ${{ runner.workspace }}/check-SHA/github-sha.txt
       - name: Check SHA
         id: check_sha
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ runner.workspace }}/check-SHA
           key: check-SHA-${{ github.sha }}
@@ -33,12 +30,9 @@ jobs:
         run: |
           echo ::notice:: No modifications since last evaluation
           exit 1
-      - name: Checkout your code
-        uses: actions/checkout@v3
-        # Get the libraries
       - name: Cache Libraries
         id: cache-libraries
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ runner.workspace }}/public
@@ -70,7 +64,7 @@ jobs:
           install-build: true
       - if: steps.cache-libraries.outputs.cache-hit != 'true'
         name: Build image comparator
-        uses: ashutoshvarma/action-cmake-build@master
+        uses: Estia-1a/action-cmake-build@master
         with:
           source-dir: ${{ runner.workspace }}/public/image-comparator
           build-dir: ${{ runner.workspace }}/public/image-comparator/build
@@ -94,7 +88,7 @@ jobs:
           save-log: true
       - name: Run tests
         id: runTests
-        uses: Estia-1a/projetGenieInfo_public/actions/evaluator@release/evaluator-2024
+        uses: Estia-1a/projetGenieInfo_public/actions/evaluator@release/evaluator-2024  
         with:
           buildDirectory: ./dist/
           testsDirectory: ${{ runner.workspace }}/public/images
@@ -103,10 +97,49 @@ jobs:
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env: 
-          RUN-TEST_RESULTS: "${{ steps.runTests.outputs.result }}"
+          RUNTESTS_RESULTS: "${{ steps.runTests.outputs.result || 0}}"
         with:
           runners: runTests
+      - name: Summary
+        run: |
+          echo "${{steps.runTests.outputs.markdown}}" > $GITHUB_STEP_SUMMARY
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+            add-paths: result
+            commit-message: Automatic Evaluation ${{steps.runTests.outputs.grade}} on ${{steps.runTests.outputs.date}}
+            branch: Evaluation/Daily
+            branch-suffix: timestamp
+            delete-branch: true
+            title: Daily Evaluation ${{steps.runTests.outputs.grade}} on ${{steps.runTests.outputs.date}}
+            body: ${{steps.runTests.outputs.markdown}}
+      - name: Get error message 
+        id: errorMessage 
+        if: ${{ failure() && steps.buildFreud.conclusion == 'failure' }}
+        run : |
+          echo "# Compilation Failed"> $GITHUB_STEP_SUMMARY
+          echo "## make output"          >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`markdown"  >> $GITHUB_STEP_SUMMARY
+          cat ${{ github.workspace }}/result/${{env.RELEASE_DATE}}/stderr.log  >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`"  >> $GITHUB_STEP_SUMMARY
+          MESSAGE=$(cat $GITHUB_STEP_SUMMARY) 
+          MESSAGE="${MESSAGE//'%'/'%25'}"
+          MESSAGE="${MESSAGE//$'\n'/'%0A'}"
+          MESSAGE="${MESSAGE//$'\r'/'%0D'}"
+          echo "::set-output name=content::$MESSAGE"
+      - name: Create Pull Request
+        if: ${{ failure() && steps.buildFreud.conclusion == 'failure' }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+            add-paths: result
+            commit-message: Compilation failed on ${{env.RELEASE_DATE}}
+            branch: Evaluation/Daily
+            branch-suffix: timestamp
+            delete-branch: true
+            title: Daily Evaluation failed ${{env.RELEASE_DATE}}
+            body: ${{steps.errorMessage.outputs.content}}
       - name: handle no modification
         if: ${{ failure() && steps.abort.conclusion == 'failure' }}
         run: |
           echo "# No evaluation needed" > $GITHUB_STEP_SUMMARY
+
