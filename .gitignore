@@ -4,6 +4,8 @@ images/
 .vscode
 getopt/
 estia-image/
+**/estia-image/
+**/getopt/
 freud.exe
 
 #CMAKE

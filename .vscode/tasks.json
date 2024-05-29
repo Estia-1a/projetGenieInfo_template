@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
+			"type": "process",
 			"label": "Custom build",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
@@ -17,11 +17,23 @@
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-			"problemMatcher": [
-				"$gcc"
-			],
+		
 			"group": "build",
 			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe"
+		},
+		{
+			"type": "shell",
+			"label": "Estia: Validate your installation",
+			"command": "./validconfig.sh",
+	
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"detail": "Run a series of tests to be sure everything is ok. First set terminal to bash with <Select Default Shell>"
 		}
 	]
 }
