@@ -45,6 +45,21 @@
 
 - If you see "You are signed in now and can close this page." in your browser, you have successfully connected your GitHub account to VS Code.
 
+in the terminal (ctrl + j) check that your git configuration has the correct name and email address (either your estia or the email address in https://github.com/settings/emails) 
+
+```
+$ git config user.name
+dhmmasson
+$ git config user.email
+5263585+dhmmasson@users.noreply.github.com
+```
+
+If you want to update your email : 
+```
+$ git config user.email 5263585+dhmmasson@users.noreply.github.com
+```
+
+
 ## 2 Clone project
 - Open command palette (CTRL + SHIFT + P)
 - Type "clone" and select "GIT: clone"
@@ -60,15 +75,31 @@ WARNING: No accents in your folder names! Otherwise, your project will not compi
 
 **estia-image**
 - Download the `estia-image` zip file correponding to your setup 
-- (e.g., VS Code, Windows 10, with mingw 32 bits: [estia-image-v2.0.1-win10-mingw32.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/estia-image-v2.0.1-win10-ming32.zip))
+- (e.g., VS Code, Windows 10, with mingw 64 bits: [estia-image-v2.0.1-win10-mingw64](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/estia-image-v2.0.1-win10-mingw64.zip))
 - Unzip the file
 - Move the `estia-image/` folder in your project (near `src/`)
 
 **getopt**
-- Download the `getopt` zip file correponding to your setup (e.g., VS Code, Windows 10, with mingw 32 bits: [getopt-v2.0.1-win10-mingw32.zip](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/getopt-v2.0.1-win10-ming32.zip))
+- Download the `getopt` zip file correponding to your setup (e.g., VS Code, Windows 10, with mingw 64 bits: [getopt-v2.0.1-win10-mingw64](https://github.com/Estia-1a/projetGenieInfo_public/releases/download/v2.0.1/getopt-v2.0.1-win10-mingw64.zip))
 - Unzip the file
 - Move the `getopt/` folder in your project (near `src/` and `estia-image/`)
 
+the final structure should look exactly like that
+>
+> - .github
+> - .vscode
+> - estia-image
+>   - include
+>     - estia-image.h
+>   - lib
+>     - libestia-image.a
+> - getopt
+>   - include
+>     - getopt.h
+>   - lib
+>     - libgetopt.a
+> - images
+> - src
 
 ## 4 Install
 To install project you can either:
@@ -99,9 +130,15 @@ To install project you can either:
 
 <img src="https://user-images.githubusercontent.com/16139930/168266156-eaed4cd2-0fe7-4bed-81d6-afd3b7485dee.png" width="500px" />
 
----
+## 5. Importing the features to be implemented
 
-## 5 Let's start working
+From the github page of your project, one member of the team click on the menu Actions. Then on the left navigation select "Import issues from template". Finally click on the right on the button run workflow, and run the workflow on the main branch. 
+
+<img width="1475" alt="Screen Shot 2023-06-07 at 10 39 28" src="https://github.com/Estia-1a/projetGenieInfo_public/assets/5263585/edd26d4c-af10-4d8c-8e2d-1ff811e0c6b3">
+
+This will create issues (it may take some times). Each issue is related to a task you have to do in this project. 
+
+## 6 Let's start working
 
 Now, refer to the [wiki](https://github.com/Estia-1a/projetGenieInfo_public/wiki/How-to-start-working) to start working !
 
