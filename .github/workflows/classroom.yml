@@ -6,9 +6,18 @@ permissions:
   actions: read
   contents: write
   pull-requests: write
+  issues: write
 env:
   PUBLIC_URL: https://github.com/Estia-1a/projetGenieInfo_public/archive/refs/heads/release/evaluator.zip
 jobs:
+  copy:
+    if: github.run_number == '1' 
+    name: Copy Issues
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Estia-1a/projetGenieInfo_public/actions/issue-mover@issues-v2022
+        with:
+          destination-repo: ${{ github.repository }}
   run-autograding-tests:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
